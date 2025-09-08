@@ -1,0 +1,1 @@
+ /home/kavia/workspace/code-generation/kindergarten-management-system-72000-68677/kindergarten_frontend/.dart_tool/flutter_build/39a46ecc813055c8025784cd416fe438/dart_build_result.json: 

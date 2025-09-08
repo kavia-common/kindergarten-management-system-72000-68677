@@ -3,16 +3,17 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:kindergarten_frontend/main.dart';
 
 void main() {
-  testWidgets('App generation message displayed', (WidgetTester tester) async {
-    await tester.pumpWidget(const MyApp());
+  testWidgets('App loads correctly', (WidgetTester tester) async {
+    await tester.pumpWidget(const KindergartenApp());
 
-    expect(find.text('kindergarten_frontend App is being generated...'), findsOneWidget);
+    expect(find.text('Kindergarten Management'), findsOneWidget);
     expect(find.byType(CircularProgressIndicator), findsOneWidget);
   });
 
-  testWidgets('App bar has correct title', (WidgetTester tester) async {
-    await tester.pumpWidget(const MyApp());
+  testWidgets('Splash screen displays correctly', (WidgetTester tester) async {
+    await tester.pumpWidget(const KindergartenApp());
 
-    expect(find.text('kindergarten_frontend'), findsOneWidget);
+    expect(find.text('Loading...'), findsOneWidget);
+    expect(find.byIcon(Icons.school), findsOneWidget);
   });
 }
