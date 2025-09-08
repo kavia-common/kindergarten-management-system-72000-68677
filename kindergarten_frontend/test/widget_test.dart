@@ -1,18 +1,10 @@
-import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:kindergarten_frontend/main.dart';
 
 void main() {
-  testWidgets('App generation message displayed', (WidgetTester tester) async {
-    await tester.pumpWidget(const MyApp());
-
-    expect(find.text('kindergarten_frontend App is being generated...'), findsOneWidget);
-    expect(find.byType(CircularProgressIndicator), findsOneWidget);
-  });
-
-  testWidgets('App bar has correct title', (WidgetTester tester) async {
-    await tester.pumpWidget(const MyApp());
-
-    expect(find.text('kindergarten_frontend'), findsOneWidget);
+  testWidgets('App boots and shows dashboard tab', (tester) async {
+    await tester.pumpWidget(const KindergartenApp());
+    await tester.pumpAndSettle();
+    expect(find.text('Dashboard'), findsOneWidget);
   });
 }
